@@ -18,7 +18,7 @@ contract BlockifyPortal {
 
   Recommendation[] recommendations;
 
-    constructor() {
+    constructor() payable {
         console.log("Yo yo, I am the smartest contract.");
 
         seed = (block.timestamp + block.difficulty) % 100;
@@ -27,8 +27,8 @@ contract BlockifyPortal {
     function recommend(string memory _message) public {
 
       require (
-        lastRecommendedAt[msg.sender] + 15 minutes < block.timestamp,
-        "Wait 15m"
+        lastRecommendedAt[msg.sender] + 90 minutes < block.timestamp,
+        "Please Wait 1.5 hours before recommending again."
       );
 
       lastRecommendedAt[msg.sender] = block.timestamp;
@@ -39,10 +39,10 @@ contract BlockifyPortal {
 
       seed = (block.difficulty + block.timestamp + seed) % 100;
 
-      if (seed <= 50) {
+      if (seed <= 20) {
         console.log("%s won!", msg.sender);
 
-        uint prizeAmount = 0.00069 ether;
+        uint prizeAmount = 0.0069 ether;
         require(
           prizeAmount <= address(this).balance,
           "Trying to withdraw more money than the contract has."
