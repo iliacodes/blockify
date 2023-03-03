@@ -1,0 +1,132 @@
+.App {
+  height: 100vh;
+  background-color: #0d1116;
+  overflow: scroll;
+  text-align: center;
+  background-image: url('https://tenor.com/view/cyberpunk-edgerunners-cyberpunk-edgerunners-studio-trigger-netflix-gif-25926675.gif');
+  background-repeat: repeat;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.App::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://tenor.com/view/cyberpunk-edgerunners-cyberpunk-edgerunners-studio-trigger-netflix-gif-25926675.gif');
+  background-repeat: repeat;
+  background-size: cover;
+  filter: brightness(25%);
+  z-index: -1;
+}
+
+.mainContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 64px;
+  color: white;
+}
+
+.dataContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 600px;
+}
+
+.header {
+font-family: 'Orbitron', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #00ff00;
+  text-shadow: 0px 0px 5px #00ff00, 0px 0px 10px #00ff00, 0px 0px 15px #00ff00;
+  animation: neon 1s ease-in-out infinite alternate;
+
+}
+
+.bio {
+  text-align: center;
+  color: white;
+  margin-top: 16px;
+}
+.connect-wallet-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: -webkit-linear-gradient(left, #8ede87, #155908);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+  border-radius: 25px;
+  color: white;
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+
+.waveButton {
+  cursor: pointer;
+  color: white;
+  margin-top: 16px;
+  padding: 8px;
+  border: 0;
+  border-radius: 5px;
+  background: -webkit-linear-gradient(left, #8ede87, #155908);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+}
+
+.connect-wallet-button {
+  background: -webkit-linear-gradient(left, #60c657, #357c27);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease infinite;
+}
+
+/* KeyFrames */
+@-webkit-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes neon {
+  from {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+  }
+  to {
+    text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 20px #00ff00, 0 0 30px #00ff00;
+  }
+}
